@@ -20,7 +20,7 @@ static Acctype linear_upsampling_compute_source_index(
   if (align_corners) {
     return scale * dst_index;
   } else {
-    Acctype src_idx = scale * (dst_index + Acctype(0.5)) - Acctype(0.5);
+    Acctype src_idx = scale * dst_index;
     return src_idx < Acctype(0) ? Acctype(0) : src_idx;
   }
 }

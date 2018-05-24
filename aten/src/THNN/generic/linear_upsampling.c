@@ -17,7 +17,7 @@ static inline float THNN_(linear_upsampling_compute_source_index)(
   if (align_corners) {
     return scale * dst_index;
   } else {
-    float src_idx = scale * (dst_index + 0.5) - 0.5;
+    float src_idx = scale * dst_index;
     return src_idx < 0 ? 0.f : src_idx;
   }
 }
